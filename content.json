@@ -1,7 +1,7 @@
 {
   "phone": "+91 7560970070",
   "insta1": "@in_homes_",
-  "insta2": "@ava__design_studio",
+  "insta2": "@ajmal",
   "location": "Kasaragod, Kerala, India",
   "aboutText": "Based in Kasaragod, Kerala, In Homes specializes in luxury residential interior design and 3D architectural walkthroughs.",
   "aboutImg": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop",
@@ -20,12 +20,36 @@
   ],
   "projects": [],
   "sections": [
-    { "id": "hero", "name": "Hero Visual Reel", "active": true },
-    { "id": "showcase", "name": "Portfolio Showcase", "active": true },
-    { "id": "services", "name": "Services", "active": true },
-    { "id": "materials", "name": "Material Palette", "active": true },
-    { "id": "estimator", "name": "Cost Estimator", "active": true },
-    { "id": "about", "name": "About Studio", "active": true }
+    {
+      "id": "hero",
+      "name": "Hero Visual Reel",
+      "active": true
+    },
+    {
+      "id": "showcase",
+      "name": "Portfolio Showcase",
+      "active": true
+    },
+    {
+      "id": "services",
+      "name": "Services",
+      "active": true
+    },
+    {
+      "id": "materials",
+      "name": "Material Palette",
+      "active": true
+    },
+    {
+      "id": "estimator",
+      "name": "Cost Estimator",
+      "active": true
+    },
+    {
+      "id": "about",
+      "name": "About Studio",
+      "active": true
+    }
   ],
   "leads": []
 }
