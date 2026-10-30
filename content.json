@@ -26,6 +26,13 @@
   ],
   "projects": [
     {
+      "id": 1793373740730,
+      "category": "residential",
+      "title": "cafe",
+      "location": "Kasaragod Project",
+      "url": "https://github.com/badru44/inhomes-image/blob/main/Scene%201.png?raw=true"
+    },
+    {
       "id": 1793373480623,
       "category": "residential",
       "title": "ehaz",
