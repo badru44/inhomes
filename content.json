@@ -1,4 +1,31 @@
 {
-  "basePrice": "350",
-  "announcement": "Welcome to In Homes Kasaragod"
+  "phone": "+91 7560970070",
+  "insta1": "@in_homes_",
+  "insta2": "@ava__design_studio",
+  "location": "Kasaragod, Kerala, India",
+  "aboutText": "Based in Kasaragod, Kerala, In Homes specializes in luxury residential interior design and 3D architectural walkthroughs.",
+  "aboutImg": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop",
+  "rates": {
+    "rate3d": 150,
+    "rateDesign": 220,
+    "rateTurnkey": 1200
+  },
+  "heroSlides": [
+    {
+      "tag": "BEDROOMS & SUITES",
+      "title": "Sculpted for Resting",
+      "desc": "Warm ambient fluted oak and concealed LED cove lighting.",
+      "bg": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=2000&auto=format&fit=crop"
+    }
+  ],
+  "projects": [],
+  "sections": [
+    { "id": "hero", "name": "Hero Visual Reel", "active": true },
+    { "id": "showcase", "name": "Portfolio Showcase", "active": true },
+    { "id": "services", "name": "Services", "active": true },
+    { "id": "materials", "name": "Material Palette", "active": true },
+    { "id": "estimator", "name": "Cost Estimator", "active": true },
+    { "id": "about", "name": "About Studio", "active": true }
+  ],
+  "leads": []
 }
