@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Homes | Interior Design & 3D Architectural Studio | Kasaragod</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bronze: '#c8a97e',
+                            bronzeHover: '#b8986c',
+                            dark: '#0e0f11',
+                            cardBg: '#16181b',
+                            muted: '#8e939a',
+                            border: '#26292e',
+                            cream: '#f4f1ea'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0e0f11;
+            color: #e5e7eb;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-serif-luxury {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e0f11;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #26292e;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c8a97e;
+        }
+
+        /* Glassmorphism styling */
+        .glass-panel {
+            background: rgba(22, 24, 27, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-pill {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-bg-img {
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease-in-out;
+        }
+
+        .vignette-overlay {
+            background: radial-gradient(circle at center, rgba(14, 15, 17, 0.25) 0%, rgba(14, 15, 17, 0.85) 80%, rgba(14, 15, 17, 1) 100%),
+                        linear-gradient(to bottom, rgba(14,15,17,0.7) 0%, rgba(14,15,17,0.2) 40%, rgba(14,15,17,0.95) 100%);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 35px rgba(200, 169, 126, 0.25);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-bronze selection:text-black">
+
+    <!-- TOP NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6 px-6 md:px-12" id="mainHeader">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            
+            <!-- Logo -->
+            <a href="#" class="flex flex-col group">
+                <span class="font-serif-luxury text-2xl md:text-3xl tracking-[0.2em] text-white font-medium group-hover:text-brand-bronze transition-colors">
+                    IN HOMES
+                </span>
+                <span class="text-[9px] tracking-[0.35em] uppercase text-gray-400 group-hover:text-gray-300 transition-colors">
+                    Interior Studio • Kasaragod
+                </span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-9 text-xs tracking-[0.2em] uppercase font-medium text-gray-300">
+                <a href="#showcase" class="hover:text-brand-bronze transition-colors">Showcase</a>
+                <a href="#services" class="hover:text-brand-bronze transition-colors">Services</a>
+                <a href="#materials" class="hover:text-brand-bronze transition-colors">Materials</a>
+                <a href="#estimator" class="hover:text-brand-bronze transition-colors">Estimate</a>
+                <a href="#about" class="hover:text-brand-bronze transition-colors">About</a>
+            </nav>
+
+            <!-- CTA & Mobile Trigger -->
+            <div class="flex items-center space-x-4">
+                <a href="https://wa.me/919000000000?text=Hello%20InHomes%20Studio,%20I%20would%20like%20to%20discuss%20an%20interior%20design%20project." 
+                   target="_blank" 
+                   class="hidden sm:inline-flex items-center space-x-2 text-xs uppercase tracking-[0.18em] px-5 py-2.5 rounded-full border border-brand-bronze/40 text-brand-bronze hover:bg-brand-bronze hover:text-black transition-all duration-300">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>Inquire</span>
+                </a>
+                <button onclick="openModal()" class="hidden sm:inline-flex items-center space-x-2 text-xs uppercase tracking-[0.18em] px-6 py-2.5 rounded-full bg-brand-bronze text-black font-semibold hover:bg-brand-bronzeHover transition-all duration-300 shadow-md">
+                    <span>Book Brief</span>
+                </button>
+                <button id="mobileMenuBtn" class="md:hidden text-white text-xl p-2 focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars-staggered" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobileMenu" class="fixed inset-0 bg-brand-dark/95 z-40 backdrop-blur-xl hidden flex-col justify-center items-center space-y-8 text-center">
+        <a href="#showcase" onclick="toggleMobileMenu()" class="font-serif-luxury text-3xl text-white hover:text-brand-bronze">Showcase</a>
+        <a href="#services" onclick="toggleMobileMenu()" class="font-serif-luxury text-3xl text-white hover:text-brand-bronze">Services</a>
+        <a href="#materials" onclick="toggleMobileMenu()" class="font-serif-luxury text-3xl text-white hover:text-brand-bronze">Materials</a>
+        <a href="#estimator" onclick="toggleMobileMenu()" class="font-serif-luxury text-3xl text-white hover:text-brand-bronze">Cost Estimator</a>
+        <a href="#about" onclick="toggleMobileMenu()" class="font-serif-luxury text-3xl text-white hover:text-brand-bronze">Kasaragod Studio</a>
+        <button onclick="toggleMobileMenu(); openModal();" class="mt-4 text-xs uppercase tracking-widest px-8 py-3 rounded-full border border-brand-bronze text-brand-bronze">
+            Book Consultation
+        </button>
+    </div>
+
+    <!-- MAIN HERO & CINEMATIC CATEGORY REEL -->
+    <section id="hero" class="relative w-full h-screen overflow-hidden flex items-center justify-center">
+        
+        <!-- Background Slides (Bedroom, Living, Cafe, Boutique, Walkthrough) -->
+        <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
+            <div id="bgSlide0" class="hero-bg-img absolute inset-0 bg-cover bg-center transition-all duration-1000 scale-100 opacity-100"
+                 style="background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=2000&auto=format&fit=crop');">
+            </div>
+            <div id="bgSlide1" class="hero-bg-img absolute inset-0 bg-cover bg-center transition-all duration-1000 scale-105 opacity-0"
+                 style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2000&auto=format&fit=crop');">
+            </div>
+            <div id="bgSlide2" class="hero-bg-img absolute inset-0 bg-cover bg-center transition-all duration-1000 scale-105 opacity-0"
+                 style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2000&auto=format&fit=crop');">
+            </div>
+            <div id="bgSlide3" class="hero-bg-img absolute inset-0 bg-cover bg-center transition-all duration-1000 scale-105 opacity-0"
+                 style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2000&auto=format&fit=crop');">
+            </div>
+            <div id="bgSlide4" class="hero-bg-img absolute inset-0 bg-cover bg-center transition-all duration-1000 scale-105 opacity-0"
+                 style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop');">
+            </div>
+
+            <div class="absolute inset-0 vignette-overlay pointer-events-none"></div>
+        </div>
+
+        <!-- Hero Content Overlay -->
+        <div class="relative z-10 max-w-5xl px-6 md:px-12 text-center flex flex-col items-center">
+            
+            <div class="mb-4 inline-flex items-center space-x-3 px-4 py-1.5 rounded-full glass-pill text-brand-bronze text-[11px] uppercase tracking-[0.25em]">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-bronze animate-pulse"></span>
+                <span id="sceneTag">BEDROOMS & SUITES</span>
+            </div>
+
+            <h1 id="sceneTitle" class="font-serif-luxury text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white tracking-tight leading-[1.05] mb-6 transition-all duration-500 text-glow">
+                Sculpted for Resting
+            </h1>
+
+            <p id="sceneDesc" class="text-sm sm:text-base md:text-lg text-gray-300 font-light max-w-2xl leading-relaxed transition-all duration-500">
+                Warm ambient fluted oak, tactile microcement finishes, and concealed LED cove lighting engineered for serene sanctuary living.
+            </p>
+
+            <!-- Navigation Indicator Dots -->
+            <div class="mt-10 flex items-center space-x-3">
+                <button onclick="goToScene(0)" class="scene-dot w-10 h-1 bg-brand-bronze rounded-full transition-all duration-300 opacity-100" aria-label="Bedrooms"></button>
+                <button onclick="goToScene(1)" class="scene-dot w-4 h-1 bg-white/30 hover:bg-white/60 rounded-full transition-all duration-300" aria-label="Living Spaces"></button>
+                <button onclick="goToScene(2)" class="scene-dot w-4 h-1 bg-white/30 hover:bg-white/60 rounded-full transition-all duration-300" aria-label="Cafes & Restos"></button>
+                <button onclick="goToScene(3)" class="scene-dot w-4 h-1 bg-white/30 hover:bg-white/60 rounded-full transition-all duration-300" aria-label="Boutiques & Retail"></button>
+                <button onclick="goToScene(4)" class="scene-dot w-4 h-1 bg-white/30 hover:bg-white/60 rounded-full transition-all duration-300" aria-label="3D Visualizations"></button>
+            </div>
+        </div>
+
+        <!-- Left/Right Controls -->
+        <button onclick="prevScene()" class="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 z-20 hidden sm:flex w-12 h-12 rounded-full glass-panel items-center justify-center text-white hover:text-brand-bronze border border-white/10 hover:border-brand-bronze/50 transition-all">
+            <i class="fa-solid fa-arrow-left text-sm"></i>
+        </button>
+        <button onclick="nextScene()" class="absolute right-6 md:right-12 top-1/2 -translate-y-1/2 z-20 hidden sm:flex w-12 h-12 rounded-full glass-panel items-center justify-center text-white hover:text-brand-bronze border border-white/10 hover:border-brand-bronze/50 transition-all">
+            <i class="fa-solid fa-arrow-right text-sm"></i>
+        </button>
+
+        <!-- Bottom Scroll Helper -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center space-y-2 pointer-events-none opacity-80">
+            <span class="text-[10px] tracking-[0.3em] uppercase text-gray-400">Scroll to Explore Studio</span>
+            <div class="w-4 h-7 border border-white/20 rounded-full flex justify-center p-1">
+                <div class="w-1 h-2 bg-brand-bronze rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE PORTFOLIO & ROOM SWITCHER -->
+    <section id="showcase" class="py-24 px-6 md:px-12 bg-brand-dark border-t border-brand-border/40">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-bronze text-xs uppercase tracking-[0.3em]">Featured Portfolio</span>
+                    <h2 class="font-serif-luxury text-4xl md:text-5xl text-white mt-2">Curated Spaces & 3D Visuals</h2>
+                </div>
+                <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0 font-light">
+                    From luxury residences in Kasaragod and Malabar to boutique commercial venues across South India and the UAE.
+                </p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap gap-3 mb-10 border-b border-brand-border/60 pb-4">
+                <button onclick="filterPortfolio('all')" id="portTab-all" class="port-tab px-5 py-2 rounded-full text-xs uppercase tracking-widest transition-all glass-panel text-brand-bronze border-brand-bronze/60">
+                    All Projects
+                </button>
+                <button onclick="filterPortfolio('residential')" id="portTab-residential" class="port-tab px-5 py-2 rounded-full text-xs uppercase tracking-widest transition-all glass-panel text-gray-400 hover:text-white border-transparent">
+                    Bedrooms & Living
+                </button>
+                <button onclick="filterPortfolio('commercial')" id="portTab-commercial" class="port-tab px-5 py-2 rounded-full text-xs uppercase tracking-widest transition-all glass-panel text-gray-400 hover:text-white border-transparent">
+                    Cafes & Boutiques
+                </button>
+                <button onclick="filterPortfolio('render3d')" id="portTab-render3d" class="port-tab px-5 py-2 rounded-full text-xs uppercase tracking-widest transition-all glass-panel text-gray-400 hover:text-white border-transparent">
+                    3D Walkthrough Renders
+                </button>
+            </div>
+
+            <!-- Grid Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolioGrid">
+                
+                <!-- Project Card 1 -->
+                <div class="port-card residential glass-panel rounded-2xl overflow-hidden group border border-white/10 flex flex-col">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1000&auto=format&fit=crop" 
+                             alt="Warm Minimalist Bedroom" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 glass-pill px-3 py-1 rounded-full text-[10px] text-white uppercase tracking-wider">
+                            Kasaragod Residence
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-brand-bronze text-[11px] uppercase tracking-widest">Master Bedroom Suite</span>
+                            <h3 class="font-serif-luxury text-2xl text-white mt-1">Warm Fluted Oak Sanctuary</h3>
+                            <p class="text-gray-400 text-xs mt-2 font-light leading-relaxed">
+                                Custom headboard paneling, indirect LED cove lighting, and acoustic oak slat walling designed for deep rest.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-3 border-t border-brand-border/60">
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Fluted Oak</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Microcement</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Japandi Pendant</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="port-card commercial glass-panel rounded-2xl overflow-hidden group border border-white/10 flex flex-col">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1000&auto=format&fit=crop" 
+                             alt="Artisanal Specialty Cafe" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 glass-pill px-3 py-1 rounded-full text-[10px] text-white uppercase tracking-wider">
+                            Commercial Interior
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-brand-bronze text-[11px] uppercase tracking-widest">Specialty Espresso Bar</span>
+                            <h3 class="font-serif-luxury text-2xl text-white mt-1">Monolithic Terra Bar & Cafe</h3>
+                            <p class="text-gray-400 text-xs mt-2 font-light leading-relaxed">
+                                Earthy clay plaster walls, cast concrete espresso bar, and intimate recessed arch seating booths.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-3 border-t border-brand-border/60">
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Terrazzo Counter</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Clay Plaster</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Brass Trims</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="port-card render3d glass-panel rounded-2xl overflow-hidden group border border-white/10 flex flex-col">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000&auto=format&fit=crop" 
+                             alt="Modern Living Room 3D Visualization" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 glass-pill px-3 py-1 rounded-full text-[10px] text-white uppercase tracking-wider">
+                            3D Photorealistic Render
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-brand-bronze text-[11px] uppercase tracking-widest">Living Room Concept</span>
+                            <h3 class="font-serif-luxury text-2xl text-white mt-1">Double-Height Courtyard Lounge</h3>
+                            <p class="text-gray-400 text-xs mt-2 font-light leading-relaxed">
+                                Complete 3D lighting simulation featuring tropical courtyard views, floating staircase, and bouclé curved sofa.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-3 border-t border-brand-border/60">
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">3D Render</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Travertine Stone</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Warm Bronze</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="port-card commercial glass-panel rounded-2xl overflow-hidden group border border-white/10 flex flex-col">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop" 
+                             alt="Luxury Retail Boutique" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 glass-pill px-3 py-1 rounded-full text-[10px] text-white uppercase tracking-wider">
+                            Boutique Interior
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-brand-bronze text-[11px] uppercase tracking-widest">High-End Fashion Showroom</span>
+                            <h3 class="font-serif-luxury text-2xl text-white mt-1">Minimalist Atelier Studio</h3>
+                            <p class="text-gray-400 text-xs mt-2 font-light leading-relaxed">
+                                Custom linear hanging racks, floating marble check-out desk, and high-CRI museum spot lighting.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-3 border-t border-brand-border/60">
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Custom Racks</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Satin Brass</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Spot Lighting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 5 -->
+                <div class="port-card residential glass-panel rounded-2xl overflow-hidden group border border-white/10 flex flex-col">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" 
+                             alt="Modern Kerala Villa Interior" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 glass-pill px-3 py-1 rounded-full text-[10px] text-white uppercase tracking-wider">
+                            Villa Interior
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-brand-bronze text-[11px] uppercase tracking-widest">Dining & Open Kitchen</span>
+                            <h3 class="font-serif-luxury text-2xl text-white mt-1">Tropical Contemporary Residence</h3>
+                            <p class="text-gray-400 text-xs mt-2 font-light leading-relaxed">
+                                Teak wood elements combined with sleek quartz countertops and indoor green planters.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-3 border-t border-brand-border/60">
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Teak Wood</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Quartzite</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Biophilic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 6 -->
+                <div class="port-card render3d glass-panel rounded-2xl overflow-hidden group border border-white/10 flex flex-col">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=1000&auto=format&fit=crop" 
+                             alt="3D Walkthrough Exterior & Interior Integration" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 glass-pill px-3 py-1 rounded-full text-[10px] text-white uppercase tracking-wider">
+                            3D Walkthrough Animation
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-brand-bronze text-[11px] uppercase tracking-widest">Architectural Animation</span>
+                            <h3 class="font-serif-luxury text-2xl text-white mt-1">Coastal Villa 3D Walkthrough</h3>
+                            <p class="text-gray-400 text-xs mt-2 font-light leading-relaxed">
+                                Full 4K walkthrough animation modeling natural sun path, shadow movements, and furniture arrangement.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-3 border-t border-brand-border/60">
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">4K Render</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Sun Simulation</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded-md bg-white/5 text-gray-300">Walkthrough</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 3: SERVICES OFFERED -->
+    <section id="services" class="py-24 px-6 md:px-12 bg-[#0b0c0e] border-t border-brand-border/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center space-y-4 mb-16">
+                <span class="text-brand-bronze text-xs uppercase tracking-[0.3em]">Our Expertise</span>
+                <h2 class="font-serif-luxury text-4xl md:text-5xl text-white">Full-Spectrum Design Services</h2>
+                <p class="text-gray-400 text-sm max-w-xl mx-auto font-light">
+                    Combining spatial intelligence, tactile materiality, and high-fidelity 3D rendering under one roof.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 flex flex-col justify-between space-y-6 hover:border-brand-bronze/50 transition-colors group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-bronze/10 border border-brand-bronze/30 text-brand-bronze flex items-center justify-center text-xl group-hover:bg-brand-bronze group-hover:text-black transition-all">
+                            <i class="fa-solid fa-bed"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-2xl text-white">Residential Interiors</h3>
+                        <p class="text-xs text-gray-400 font-light leading-relaxed">
+                            Custom master bedrooms, serene living rooms, modern kitchens, and luxury bathrooms tailored for daily elegance.
+                        </p>
+                    </div>
+                    <ul class="text-[11px] text-gray-300 space-y-2 border-t border-brand-border/60 pt-4">
+                        <li><i class="fa-solid fa-check text-brand-bronze mr-2"></i>Bedrooms & Dressing Rooms</li>
+                        <li><i class="fa-solid fa-check text-brand-bronze mr-2"></i>Living & Dining Layouts</li>
+                        <li><i class="fa-solid fa-check text-brand-bronze mr-2"></i>Modular Kitchen Design</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 flex flex-col justify-between space-y-6 hover:border-brand-bronze/50 transition-colors group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-bronze/10 border border-brand-bronze/30 text-brand-bronze flex items-center justify-center text-xl group-hover:bg-brand-bronze group-hover:text-black transition-all">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-2xl text-white">Cafes & Retail Shops</h3>
+                        <p class="text-xs text-gray-400 font-light leading-relaxed">
+                            Distinct commercial atmospheres designed to elevate customer experience and maximize space efficiency.
+                        </p>
+                    </div>
+                    <ul class="text-[11px] text-gray-300 space-y-2 border-t border-brand-border/60 pt-4">
+                        <li><i class="fa-solid fa-check text-brand-bronze mr-2"></i>Specialty Coffee Shops</li>
+                        <li><i class="fa-solid fa-check text-brand-bronze mr-2"></i>Fashion Boutiques & Outlets</li>
+                        <li><i class="fa-solid fa-check text-brand-bronze mr-2"></i>Corporate Office Spaces</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 flex flex-col justify-between space-y-6 hover:border-brand-bronze/50 transition-colors group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-bronze/10 border border-brand-bronze/30 text-brand-bronze flex items-center justify-center text-xl group-hover:bg-brand-bronze group-hover:text-black transition-all">
+                            <i class="fa-solid fa-cube"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-2xl text-white">3D Walkthrough Renders</h3>
+                        <p class="text-xs text-gray-400 font-light leading-relaxed">
+                            Ultra-realistic 3D visualization animations allowing you to experience your space before breaking ground.
+                        </p>
+                    </div>
+                    <ul class="text-[11px] text-gray-300 space-y-2 border-t border-brand-border/60 pt-4">
+                        <li><i class="fa-solid fa-check text-brand-bronze mr-2"></i>Photorealistic Still Renders</li>
+                        <li><i class="fa-solid fa-check text-brand-bronze mr-2"></i>360° Virtual Tour Views</li>
+                        <li><i class="fa-solid fa-check text-brand-bronze mr-2"></i>Lighting Simulation</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 flex flex-col justify-between space-y-6 hover:border-brand-bronze/50 transition-colors group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-bronze/10 border border-brand-bronze/30 text-brand-bronze flex items-center justify-center text-xl group-hover:bg-brand-bronze group-hover:text-black transition-all">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-2xl text-white">Turnkey Supervision</h3>
+                        <p class="text-xs text-gray-400 font-light leading-relaxed">
+                            End-to-end design execution support, material selection, vendor coordination, and on-site quality checks.
+                        </p>
+                    </div>
+                    <ul class="text-[11px] text-gray-300 space-y-2 border-t border-brand-border/60 pt-4">
+                        <li><i class="fa-solid fa-check text-brand-bronze mr-2"></i>Custom Joinery Blueprints</li>
+                        <li><i class="fa-solid fa-check text-brand-bronze mr-2"></i>Lighting & Electrical Plans</li>
+                        <li><i class="fa-solid fa-check text-brand-bronze mr-2"></i>On-Site Execution Quality</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: INTERACTIVE MATERIAL MATRIX -->
+    <section id="materials" class="py-24 px-6 md:px-12 bg-brand-dark border-t border-brand-border/40">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-bronze text-xs uppercase tracking-[0.3em]">Tactile Palette</span>
+                    <h2 class="font-serif-luxury text-4xl md:text-5xl text-white mt-2">Signature Material Palette</h2>
+                </div>
+                <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0 font-light">
+                    Select a material swatch below to view its tactile characteristics and recommended studio placement.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-3 mb-10 border-b border-brand-border/60 pb-4">
+                <button onclick="switchMaterial('oak')" id="matTab-oak" class="material-tab px-5 py-2 rounded-full text-xs uppercase tracking-widest transition-all glass-panel text-brand-bronze border-brand-bronze/60">
+                    Fluted Oak Slats
+                </button>
+                <button onclick="switchMaterial('microcement')" id="matTab-microcement" class="material-tab px-5 py-2 rounded-full text-xs uppercase tracking-widest transition-all glass-panel text-gray-400 hover:text-white border-transparent">
+                    Textured Microcement
+                </button>
+                <button onclick="switchMaterial('travertine')" id="matTab-travertine" class="material-tab px-5 py-2 rounded-full text-xs uppercase tracking-widest transition-all glass-panel text-gray-400 hover:text-white border-transparent">
+                    Warm Travertine Stone
+                </button>
+                <button onclick="switchMaterial('brass')" id="matTab-brass" class="material-tab px-5 py-2 rounded-full text-xs uppercase tracking-widest transition-all glass-panel text-gray-400 hover:text-white border-transparent">
+                    Brushed Bronze Metals
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center glass-panel rounded-3xl p-6 md:p-10 border border-white/10">
+                <div class="lg:col-span-7 relative h-[320px] md:h-[420px] rounded-2xl overflow-hidden">
+                    <img id="materialImg" 
+                         src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop" 
+                         alt="Fluted Oak Material Swatch" 
+                         class="w-full h-full object-cover transition-all duration-700">
+                    <div class="absolute top-4 left-4 glass-pill px-4 py-2 rounded-full text-xs text-white">
+                        <i class="fa-solid fa-circle-dot text-brand-bronze mr-2"></i> Studio Texture Inspection
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="space-y-2">
+                        <span id="materialCode" class="text-xs uppercase tracking-widest text-brand-bronze">MATERIAL REF: IN-OAK-01</span>
+                        <h3 id="materialTitle" class="font-serif-luxury text-3xl md:text-4xl text-white">Natural Fluted Oak Paneling</h3>
+                    </div>
+
+                    <p id="materialDesc" class="text-gray-300 text-sm leading-relaxed font-light">
+                        Precision CNC-milled natural oak slats attached over acoustic black felt backing. Creates warm vertical lines that elevate ceiling height and dampen ambient reverberation.
+                    </p>
+
+                    <div class="space-y-3 pt-4 border-t border-brand-border/60 text-xs">
+                        <div class="flex justify-between text-gray-400">
+                            <span>Primary Use:</span>
+                            <span id="matApp" class="text-white font-medium">Bedroom Wall Feature & TV Consoles</span>
+                        </div>
+                        <div class="flex justify-between text-gray-400">
+                            <span>Finish Type:</span>
+                            <span id="matFinish" class="text-white font-medium">Matte Natural Polyurethane</span>
+                        </div>
+                        <div class="flex justify-between text-gray-400">
+                            <span>Durability Tier:</span>
+                            <span id="matTier" class="text-white font-medium">High Traffic Residential & Commercial</span>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('Material Inquiry')" class="w-full py-3.5 rounded-xl border border-brand-bronze/40 text-brand-bronze hover:bg-brand-bronze hover:text-black transition-all text-xs uppercase tracking-widest font-semibold mt-4">
+                        Request Sample Board Discussion
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 5: INTERACTIVE COST ESTIMATOR -->
+    <section id="estimator" class="py-24 px-6 md:px-12 bg-[#0a0b0d] border-t border-brand-border/40 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center space-y-4 mb-16">
+                <span class="text-brand-bronze text-xs uppercase tracking-[0.3em]">Instant Estimation</span>
+                <h2 class="font-serif-luxury text-4xl md:text-5xl text-white">Interactive Interior Cost Estimator</h2>
+                <p class="text-gray-400 text-sm max-w-lg mx-auto font-light">
+                    Select your project type and approximate floor area to receive a preliminary investment estimate.
+                </p>
+            </div>
+
+            <div class="glass-panel p-8 md:p-12 rounded-3xl space-y-8 border border-white/10">
+                
+                <!-- Space Type -->
+                <div class="space-y-3">
+                    <label class="text-xs uppercase tracking-widest text-gray-300">1. Select Space Type</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <button onclick="selectSpaceType('bedroom')" id="space-bedroom" class="space-type-btn p-3.5 rounded-xl glass-panel border-brand-bronze text-white text-xs font-medium text-center transition-all">
+                            <i class="fa-solid fa-bed text-brand-bronze block mb-1.5 text-base"></i> Bedroom
+                        </button>
+                        <button onclick="selectSpaceType('living')" id="space-living" class="space-type-btn p-3.5 rounded-xl glass-panel border-white/10 text-gray-400 text-xs font-medium text-center transition-all hover:border-white/30">
+                            <i class="fa-solid fa-couch text-brand-bronze block mb-1.5 text-base"></i> Living Room
+                        </button>
+                        <button onclick="selectSpaceType('cafe')" id="space-cafe" class="space-type-btn p-3.5 rounded-xl glass-panel border-white/10 text-gray-400 text-xs font-medium text-center transition-all hover:border-white/30">
+                            <i class="fa-solid fa-mug-hot text-brand-bronze block mb-1.5 text-base"></i> Cafe / Shop
+                        </button>
+                        <button onclick="selectSpaceType('full')" id="space-full" class="space-type-btn p-3.5 rounded-xl glass-panel border-white/10 text-gray-400 text-xs font-medium text-center transition-all hover:border-white/30">
+                            <i class="fa-solid fa-house text-brand-bronze block mb-1.5 text-base"></i> Full Villa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Design Scope -->
+                <div class="space-y-3">
+                    <label class="text-xs uppercase tracking-widest text-gray-300">2. Select Design Scope</label>
+                    <select id="scopeSelect" onchange="calculateEstimate()" class="w-full bg-brand-cardBg border border-brand-border rounded-xl p-3.5 text-white text-xs focus:outline-none focus:border-brand-bronze">
+                        <option value="3d_only">3D Architectural Visualization & Walkthrough Renders Only</option>
+                        <option value="design_consult" selected>Full Interior Design & Production Blueprints</option>
+                        <option value="turnkey">Turnkey Execution & Site Supervision</option>
+                    </select>
+                </div>
+
+                <!-- Square Feet Slider -->
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <label class="text-xs uppercase tracking-widest text-gray-300">3. Carpet Area (Square Feet)</label>
+                        <span id="sqftValue" class="text-brand-bronze font-serif-luxury text-2xl">450 sq.ft</span>
+                    </div>
+                    <input type="range" id="sqftInput" min="150" max="3500" value="450" step="25"
+                           class="w-full h-2 bg-brand-border rounded-lg appearance-none cursor-pointer accent-brand-bronze"
+                           oninput="calculateEstimate()">
+                    <div class="flex justify-between text-[10px] text-gray-500 uppercase tracking-widest">
+                        <span>Compact (150 sq.ft)</span>
+                        <span>Large Estate (3,500 sq.ft+)</span>
+                    </div>
+                </div>
+
+                <!-- Cost Display -->
+                <div class="pt-6 border-t border-brand-border/80 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div>
+                        <span class="text-[11px] uppercase tracking-widest text-gray-400 block">Estimated Investment Range</span>
+                        <div class="flex items-baseline space-x-2">
+                            <span id="priceOutput" class="font-serif-luxury text-3xl md:text-4xl text-brand-bronze">₹67,500 - ₹90,000</span>
+                        </div>
+                        <span class="text-[10px] text-gray-500 block mt-1">*Standard estimate for Kasaragod, Kerala & Remote Design briefs</span>
+                    </div>
+                    <button onclick="openModal('Estimated Scope')" class="w-full md:w-auto px-8 py-3.5 rounded-full bg-brand-bronze text-black font-semibold text-xs uppercase tracking-widest hover:bg-brand-bronzeHover transition-colors shadow-lg">
+                        Send Brief to InHomes
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT / KASARAGOD STUDIO SPOTLIGHT -->
+    <section id="about" class="py-24 px-6 md:px-12 bg-brand-dark border-t border-brand-border/40">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-6 space-y-6">
+                <span class="text-brand-bronze text-xs uppercase tracking-[0.3em]">The Studio</span>
+                <h2 class="font-serif-luxury text-4xl md:text-5xl text-white leading-tight">
+                    In Homes Interior & 3D Visualization Studio
+                </h2>
+                <p class="text-gray-300 font-light text-sm leading-relaxed">
+                    Based in Kasaragod, Kerala, <strong class="text-white">In Homes</strong> (also known as <em class="text-brand-bronze">InHomes / IN HOMES</em>) specializes in designing luxurious residential homes, contemporary cafes, and high-impact commercial spaces.
+                </p>
+                <p class="text-gray-400 font-light text-xs leading-relaxed">
+                    Whether you are building a modern villa in North Kerala or require photorealistic 3D walkthroughs remotely anywhere in India or the UAE, our studio delivers precision, clarity, and architectural sophistication.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="https://instagram.com/in_homes_" target="_blank" class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl glass-panel text-xs text-white hover:text-brand-bronze border-white/10 transition-all">
+                        <i class="fa-brands fa-instagram text-brand-bronze text-base"></i>
+                        <span>@in_homes_</span>
+                    </a>
+                    <a href="https://instagram.com/ava__design_studio" target="_blank" class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl glass-panel text-xs text-white hover:text-brand-bronze border-white/10 transition-all">
+                        <i class="fa-brands fa-instagram text-brand-bronze text-base"></i>
+                        <span>@ava__design_studio</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 relative">
+                <div class="rounded-3xl overflow-hidden glass-panel p-3 border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" 
+                         alt="In Homes Studio Architectural Render" 
+                         class="w-full h-96 object-cover rounded-2xl">
+                    <div class="p-4 flex justify-between items-center text-xs text-gray-300">
+                        <span><i class="fa-solid fa-location-dot text-brand-bronze mr-2"></i> Kasaragod, Kerala, India</span>
+                        <span class="text-brand-bronze font-serif-luxury">Remote & On-Site Projects</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#070809] border-t border-brand-border/60 py-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            
+            <div class="space-y-4">
+                <span class="font-serif-luxury text-2xl text-white tracking-widest block">IN HOMES</span>
+                <p class="text-xs text-gray-400 leading-relaxed font-light">
+                    Interior Design & 3D Architectural Visualizations.<br>
+                    Crafted with care in Kasaragod, Kerala.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-xs uppercase tracking-[0.2em] text-brand-bronze mb-4 font-semibold">Studio Location</h4>
+                <p class="text-xs text-gray-400 leading-relaxed font-light">
+                    Kasaragod, Kerala, India<br>
+                    Pin: 671121<br>
+                    Serving South India & Remote UAE Projects
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-xs uppercase tracking-[0.2em] text-brand-bronze mb-4 font-semibold">Direct Connect</h4>
+                <div class="space-y-2 text-xs text-gray-400 font-light">
+                    <a href="https://wa.me/919000000000" target="_blank" class="hover:text-brand-bronze flex items-center space-x-2 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-brand-bronze"></i>
+                        <span>WhatsApp Studio Chat</span>
+                    </a>
+                    <a href="mailto:contact@inhomesdesign.com" class="hover:text-white block transition-colors">contact@inhomesdesign.com</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-xs uppercase tracking-[0.2em] text-brand-bronze mb-4 font-semibold">Social Portfolios</h4>
+                <div class="flex space-x-4 text-gray-400 text-lg">
+                    <a href="https://instagram.com/in_homes_" target="_blank" class="hover:text-brand-bronze transition-colors" aria-label="Instagram In Homes"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://instagram.com/ava__design_studio" target="_blank" class="hover:text-brand-bronze transition-colors" aria-label="Instagram AVA Studio"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-brand-bronze transition-colors" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 border-t border-brand-border/40 flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-500">
+            <span>&copy; <span id="yearSpan"></span> In Homes (InHomes) Studio. All rights reserved.</span>
+            <span>Kasaragod • Kerala • Remote Design</span>
+        </div>
+    </footer>
+
+    <!-- CONSULTATION / BRIEF MODAL -->
+    <div id="inquiryModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="relative w-full max-w-xl glass-panel p-8 md:p-10 rounded-3xl border border-white/10 shadow-2xl max-h-[90vh] overflow-y-auto">
+            
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white text-xl p-2" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="space-y-2 mb-6">
+                <span class="text-brand-bronze text-xs uppercase tracking-[0.25em]">In Homes Studio</span>
+                <h3 class="font-serif-luxury text-3xl text-white">Start Your Design Brief</h3>
+                <p class="text-gray-400 text-xs font-light">
+                    Share your requirements with our Kasaragod interior team for residential or commercial projects.
+                </p>
+            </div>
+
+            <form id="consultationForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-[11px] uppercase tracking-widest text-gray-300 mb-1">Your Name *</label>
+                    <input type="text" required placeholder="Full Name"
+                           class="w-full bg-brand-cardBg border border-brand-border rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-bronze">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-[11px] uppercase tracking-widest text-gray-300 mb-1">Phone / WhatsApp *</label>
+                        <input type="tel" required placeholder="+91 90000 00000"
+                               class="w-full bg-brand-cardBg border border-brand-border rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-bronze">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] uppercase tracking-widest text-gray-300 mb-1">Project Location *</label>
+                        <input type="text" required placeholder="e.g. Kasaragod, Kannur, Dubai"
+                               class="w-full bg-brand-cardBg border border-brand-border rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-bronze">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[11px] uppercase tracking-widest text-gray-300 mb-1">Project Category</label>
+                    <select class="w-full bg-brand-cardBg border border-brand-border rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-bronze">
+                        <option>Master Bedroom / Bedroom Suite</option>
+                        <option>Living Room & Dining Space</option>
+                        <option>Cafe / Restaurant Interior</option>
+                        <option>Boutique / Retail Shop</option>
+                        <option>3D Architectural Walkthrough Only</option>
+                        <option>Full Villa / Residence</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-[11px] uppercase tracking-widest text-gray-300 mb-1">Project Notes / Requirements</label>
+                    <textarea rows="3" placeholder="Describe floor plan area, style preference, or timeline..."
+                              class="w-full bg-brand-cardBg border border-brand-border rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-bronze"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-bronze text-black font-semibold text-xs uppercase tracking-[0.2em] hover:bg-brand-bronzeHover transition-colors mt-2">
+                    Send Inquiry to Studio
+                </button>
+            </form>
+
+            <div id="formSuccessMessage" class="hidden text-center py-8 space-y-4">
+                <div class="w-14 h-14 rounded-full bg-brand-bronze/20 border border-brand-bronze text-brand-bronze flex items-center justify-center mx-auto text-xl">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h4 class="font-serif-luxury text-2xl text-white">Brief Submitted</h4>
+                <p class="text-gray-300 text-xs max-w-sm mx-auto font-light">
+                    Thank you! The In Homes team will review your project details and connect via WhatsApp/Phone shortly.
+                </p>
+                <button onclick="closeModal()" class="px-6 py-2 rounded-full border border-white/20 text-xs text-white uppercase tracking-widest hover:border-brand-bronze">
+                    Close
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        document.getElementById('yearSpan').innerText = new Date().getFullYear();
+
+        // 1. HERO CATEGORY REEL DATA
+        const scenes = [
+            {
+                tag: "BEDROOMS & SUITES",
+                title: "Sculpted for Resting",
+                desc: "Warm ambient fluted oak, tactile microcement finishes, and concealed LED cove lighting engineered for serene sanctuary living."
+            },
+            {
+                tag: "LIVING & DINING",
+                title: "Curated for Living",
+                desc: "Open-plan double-height lounges, curved bouclé sofas, and warm travertine feature walls designed for modern Indian homes."
+            },
+            {
+                tag: "CAFES & RESTAURANTS",
+                title: "Engineered for Hospitality",
+                desc: "Monolithic terra counters, clay plaster walls, and warm atmospheric lighting crafted to create memorable cafe dining."
+            },
+            {
+                tag: "BOUTIQUES & RETAIL",
+                title: "Designed for Retail Impact",
+                desc: "Sleek minimalist showrooms with museum-grade spotlighting and bespoke bronze display racks that elevate brand aesthetic."
+            },
+            {
+                tag: "3D WALKTHROUGH RENDERS",
+                title: "Photorealistic 3D Visuals",
+                desc: "Immersive 3D renders and architectural walkthrough animations bringing your floor plans to life before construction."
+            }
+        ];
+
+        let currentSceneIndex = 0;
+
+        function goToScene(index) {
+            if (index < 0 || index >= scenes.length) return;
+            currentSceneIndex = index;
+
+            for (let i = 0; i < scenes.length; i++) {
+                const bg = document.getElementById(`bgSlide${i}`);
+                if (i === currentSceneIndex) {
+                    bg.classList.remove('opacity-0', 'scale-105');
+                    bg.classList.add('opacity-100', 'scale-100');
+                } else {
+                    bg.classList.remove('opacity-100', 'scale-100');
+                    bg.classList.add('opacity-0', 'scale-105');
+                }
+            }
+
+            const sceneTitle = document.getElementById('sceneTitle');
+            const sceneDesc = document.getElementById('sceneDesc');
+            const sceneTag = document.getElementById('sceneTag');
+
+            sceneTag.innerText = scenes[currentSceneIndex].tag;
+            sceneTitle.innerText = scenes[currentSceneIndex].title;
+            sceneDesc.innerText = scenes[currentSceneIndex].desc;
+
+            const dots = document.querySelectorAll('.scene-dot');
+            dots.forEach((dot, idx) => {
+                if (idx === currentSceneIndex) {
+                    dot.classList.add('w-10', 'bg-brand-bronze', 'opacity-100');
+                    dot.classList.remove('w-4', 'bg-white/30');
+                } else {
+                    dot.classList.remove('w-10', 'bg-brand-bronze', 'opacity-100');
+                    dot.classList.add('w-4', 'bg-white/30');
+                }
+            });
+        }
+
+        function nextScene() {
+            goToScene((currentSceneIndex + 1) % scenes.length);
+        }
+
+        function prevScene() {
+            goToScene((currentSceneIndex - 1 + scenes.length) % scenes.length);
+        }
+
+        // Auto slide hero
+        setInterval(() => {
+            nextScene();
+        }, 6000);
+
+        // 2. PORTFOLIO FILTER
+        function filterPortfolio(category) {
+            document.querySelectorAll('.port-tab').forEach(tab => {
+                tab.classList.remove('text-brand-bronze', 'border-brand-bronze/60');
+                tab.classList.add('text-gray-400', 'border-transparent');
+            });
+
+            const activeTab = document.getElementById(`portTab-${category}`);
+            activeTab.classList.add('text-brand-bronze', 'border-brand-bronze/60');
+            activeTab.classList.remove('text-gray-400', 'border-transparent');
+
+            const cards = document.querySelectorAll('.port-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 3. MATERIAL MATRIX DATA
+        const materialsData = {
+            oak: {
+                code: "MATERIAL REF: IN-OAK-01",
+                title: "Natural Fluted Oak Paneling",
+                desc: "Precision CNC-milled natural oak slats attached over acoustic black felt backing. Creates warm vertical lines that elevate ceiling height and dampen ambient reverberation.",
+                app: "Bedroom Wall Feature & TV Consoles",
+                finish: "Matte Natural Polyurethane",
+                tier: "High Traffic Residential & Commercial",
+                img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop"
+            },
+            microcement: {
+                code: "MATERIAL REF: IN-CEM-03",
+                title: "Tactile Microcement Wall Finish",
+                desc: "Hand-troweled seamless lime polymer finish offering subtle organic texture without grout lines. Waterproof and suitable for contemporary bedrooms and cafe interiors.",
+                app: "Feature Walls, Bathrooms & Cafe Bars",
+                finish: "Satin Protective Sealer",
+                tier: "Seamless & Highly Durable",
+                img: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200&auto=format&fit=crop"
+            },
+            travertine: {
+                code: "MATERIAL REF: IN-STN-07",
+                title: "Warm Vein-Cut Travertine",
+                desc: "Natural beige limestone with characteristic linear pores and earthy warm tones. Adds rich architectural gravitas to living room TV backdrop units and coffee tables.",
+                app: "Living Room Walls & Custom Tables",
+                finish: "Honed Matt Surface",
+                tier: "Premium Architectural Stone",
+                img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop"
+            },
+            brass: {
+                code: "MATERIAL REF: IN-MET-05",
+                title: "Brushed Warm Bronze Accents",
+                desc: "Electroplated metal trims and linear shadow gaps that define cabinet edges and lighting niches with subtle warmth.",
+                app: "Joinery Trims, Handles & Light Fixtures",
+                finish: "Hand-brushed Protective Clear Coat",
+                tier: "Luxury Accent Metalwork",
+                img: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=1200&auto=format&fit=crop"
+            }
+        };
+
+        function switchMaterial(key) {
+            const data = materialsData[key];
+            if (!data) return;
+
+            document.querySelectorAll('.material-tab').forEach(tab => {
+                tab.classList.remove('text-brand-bronze', 'border-brand-bronze/60');
+                tab.classList.add('text-gray-400', 'border-transparent');
+            });
+            const activeTab = document.getElementById(`matTab-${key}`);
+            activeTab.classList.add('text-brand-bronze', 'border-brand-bronze/60');
+            activeTab.classList.remove('text-gray-400', 'border-transparent');
+
+            const img = document.getElementById('materialImg');
+            img.style.opacity = '0';
+
+            setTimeout(() => {
+                img.src = data.img;
+                document.getElementById('materialCode').innerText = data.code;
+                document.getElementById('materialTitle').innerText = data.title;
+                document.getElementById('materialDesc').innerText = data.desc;
+                document.getElementById('matApp').innerText = data.app;
+                document.getElementById('matFinish').innerText = data.finish;
+                document.getElementById('matTier').innerText = data.tier;
+                img.style.opacity = '1';
+            }, 300);
+        }
+
+        // 4. COST ESTIMATOR
+        let currentSpaceType = 'bedroom';
+
+        function selectSpaceType(type) {
+            document.querySelectorAll('.space-type-btn').forEach(btn => {
+                btn.classList.remove('border-brand-bronze', 'text-white');
+                btn.classList.add('border-white/10', 'text-gray-400');
+            });
+
+            const activeBtn = document.getElementById(`space-${type}`);
+            activeBtn.classList.add('border-brand-bronze', 'text-white');
+            activeBtn.classList.remove('border-white/10', 'text-gray-400');
+
+            currentSpaceType = type;
+            calculateEstimate();
+        }
+
+        function calculateEstimate() {
+            const sqft = parseInt(document.getElementById('sqftInput').value);
+            document.getElementById('sqftValue').innerText = `${sqft.toLocaleString()} sq.ft`;
+
+            const scope = document.getElementById('scopeSelect').value;
+
+            // Base rate per sqft in INR
+            let baseRate = 150; // default for 3D only
+            if (scope === 'design_consult') baseRate = 220;
+            if (scope === 'turnkey') baseRate = 1200;
+
+            let typeMultiplier = 1.0;
+            if (currentSpaceType === 'living') typeMultiplier = 1.25;
+            if (currentSpaceType === 'cafe') typeMultiplier = 1.4;
+            if (currentSpaceType === 'full') typeMultiplier = 1.1;
+
+            const minCost = Math.round(sqft * baseRate * typeMultiplier);
+            const maxCost = Math.round(minCost * 1.3);
+
+            const formatted = `₹${minCost.toLocaleString('en-IN')} - ₹${maxCost.toLocaleString('en-IN')}`;
+            document.getElementById('priceOutput').innerText = formatted;
+        }
+
+        // Initialize calculation
+        calculateEstimate();
+
+        // 5. MODAL FUNCTIONS
+        function openModal() {
+            const modal = document.getElementById('inquiryModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('inquiryModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            setTimeout(() => {
+                document.getElementById('consultationForm').classList.remove('hidden');
+                document.getElementById('formSuccessMessage').classList.add('hidden');
+            }, 400);
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('consultationForm').classList.add('hidden');
+            document.getElementById('formSuccessMessage').classList.remove('hidden');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        }
+
+        document.getElementById('mobileMenuBtn').addEventListener('click', toggleMobileMenu);
+
+        // Header Blur
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-brand-dark/90', 'backdrop-blur-md', 'py-4');
+                header.classList.remove('py-6');
+            } else {
+                header.classList.remove('bg-brand-dark/90', 'backdrop-blur-md', 'py-4');
+                header.classList.add('py-6');
+            }
+        });
+    </script>
+</body>
+</html>
